@@ -1,0 +1,6 @@
+SPDX-License-Identifier: GPL-2.0
+
+The imported lib/lz4/lz4.c and lib/lz4/lz4.h are from:
+
+Repository: https://github.com/lz4/lz4
+Commit: 0774d05537f9762f838f7ab541b7765f1a729cb5

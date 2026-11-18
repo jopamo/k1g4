@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: GPL-2.0
+config IGCR
+	tristate "Intel I225/I226 Ethernet support (igcr)"
+	depends on PCI
+	depends on PTP_1588_CLOCK_OPTIONAL
+	depends on ETHTOOL_NETLINK
+	help
+	  Build the igcr driver for Intel I225/I226 Ethernet controllers.
+	  The module is called igcr.
+
+config IGCR_LEDS
+	def_bool LEDS_TRIGGER_NETDEV
+	depends on IGCR && LEDS_CLASS
+	depends on LEDS_CLASS=y || IGCR=m
