@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+# Branch profiling isn't noinstr-safe
+subdir-ccflags-$(CONFIG_TRACE_BRANCH_PROFILING) += -DDISABLE_BRANCH_PROFILING
+
+obj-y			+= kernel/ mm/ net/
+obj-$(CONFIG_KVM)	+= kvm/
+# removed stale make refs from obj-$(CONFIG_XEN)
+obj-$(CONFIG_CRYPTO)	+= crypto/
+
+# for cleaning
+subdir- += boot

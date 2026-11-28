@@ -1,0 +1,15 @@
+define dwarf_reg_arch
+ifneq ($(wildcard $(srctree)/arch/$(1)/include/uapi/asm/perf_regs.h),)
+perf-util-$(CONFIG_LIBDW) += $(2).o
+endif
+endef
+
+$(eval $(call dwarf_reg_arch,arm64,dwarf-regs-arm64))
+$(eval $(call dwarf_reg_arch,arm,dwarf-regs-arm))
+$(eval $(call dwarf_reg_arch,csky,dwarf-regs-csky))
+$(eval $(call dwarf_reg_arch,loongarch,dwarf-regs-loongarch))
+$(eval $(call dwarf_reg_arch,mips,dwarf-regs-mips))
+$(eval $(call dwarf_reg_arch,powerpc,dwarf-regs-powerpc))
+$(eval $(call dwarf_reg_arch,riscv,dwarf-regs-riscv))
+$(eval $(call dwarf_reg_arch,s390,dwarf-regs-s390))
+$(eval $(call dwarf_reg_arch,x86,dwarf-regs-x86))

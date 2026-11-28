@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Analog TV tuners, auto-loaded via tuner.ko
+# removed config MEDIA_TUNER
+comment "Tuner drivers auto-selected by 'Autoselect ancillary drivers'"
+	depends on MEDIA_HIDE_ANCILLARY_SUBDRV
+	depends on MEDIA_RADIO_SUPPORT || MEDIA_SDR_SUPPORT
+
+menu "Customize TV tuners"
+	visible if !MEDIA_HIDE_ANCILLARY_SUBDRV
+	depends on MEDIA_RADIO_SUPPORT || MEDIA_SDR_SUPPORT
+
+# removed config MEDIA_TUNER_E4000
+# removed config MEDIA_TUNER_FC0011
+# removed config MEDIA_TUNER_FC0012
+# removed config MEDIA_TUNER_FC0013
+# removed config MEDIA_TUNER_FC2580
+# removed config MEDIA_TUNER_IT913X
+# removed config MEDIA_TUNER_M88RS6000T
+# removed config MEDIA_TUNER_MAX2165
+# removed config MEDIA_TUNER_MC44S803
+config MEDIA_TUNER_MSI001
+	tristate "Mirics MSi001"
+	depends on MEDIA_SUPPORT && SPI && VIDEO_DEV
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  Mirics MSi001 silicon tuner driver.
+
+# removed config MEDIA_TUNER_MT2060
+# removed config MEDIA_TUNER_MT2063
+# removed config MEDIA_TUNER_MT20XX
+# removed config MEDIA_TUNER_MT2131
+# removed config MEDIA_TUNER_MT2266
+# removed config MEDIA_TUNER_MXL301RF
+# removed config MEDIA_TUNER_MXL5005S
+# removed config MEDIA_TUNER_MXL5007T
+# removed config MEDIA_TUNER_QM1D1B0004
+# removed config MEDIA_TUNER_QM1D1C0042
+# removed config MEDIA_TUNER_QT1010
+# removed config MEDIA_TUNER_R820T
+# removed config MEDIA_TUNER_SI2157
+# removed config MEDIA_TUNER_SIMPLE
+# removed config MEDIA_TUNER_TDA18212
+# removed config MEDIA_TUNER_TDA18218
+# removed config MEDIA_TUNER_TDA18250
+# removed config MEDIA_TUNER_TDA18271
+# removed config MEDIA_TUNER_TDA827X
+# removed config MEDIA_TUNER_TDA8290
+# removed config MEDIA_TUNER_TDA9887
+# removed config MEDIA_TUNER_TEA5761
+# removed config MEDIA_TUNER_TEA5767
+# removed config MEDIA_TUNER_TUA9001
+# removed config MEDIA_TUNER_XC2028
+# removed config MEDIA_TUNER_XC4000
+# removed config MEDIA_TUNER_XC5000
+endmenu

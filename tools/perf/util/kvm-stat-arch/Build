@@ -1,0 +1,18 @@
+ifneq ($(wildcard $(srctree)/arch/arm64),)
+perf-util-$(CONFIG_LIBTRACEEVENT) += kvm-stat-arm64.o
+endif
+ifneq ($(wildcard $(srctree)/arch/loongarch),)
+perf-util-$(CONFIG_LIBTRACEEVENT) += kvm-stat-loongarch.o
+endif
+ifneq ($(wildcard $(srctree)/arch/powerpc),)
+perf-util-$(CONFIG_LIBTRACEEVENT) += kvm-stat-powerpc.o
+endif
+ifneq ($(wildcard $(srctree)/arch/riscv),)
+perf-util-$(CONFIG_LIBTRACEEVENT) += kvm-stat-riscv.o
+endif
+ifneq ($(wildcard $(srctree)/arch/s390/include/uapi/asm/sie.h),)
+perf-util-$(CONFIG_LIBTRACEEVENT) += kvm-stat-s390.o
+endif
+ifneq ($(wildcard $(srctree)/arch/x86/include/uapi/asm/kvm.h),)
+perf-util-$(CONFIG_LIBTRACEEVENT) += kvm-stat-x86.o
+endif

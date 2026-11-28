@@ -1,0 +1,20 @@
+/* SPDX-License-Identifier: GPL-2.0 */
+
+#ifndef __PAGE_POOL_PRIV_H
+#define __PAGE_POOL_PRIV_H
+
+#include <net/page_pool/helpers.h>
+
+#if IS_ENABLED(CONFIG_KUNIT)
+int page_pool_register_dma_index(struct page_pool *pool, struct page *page, gfp_t gfp);
+#endif
+
+extern struct mutex page_pools_lock;
+
+s32 page_pool_inflight(const struct page_pool *pool, bool strict);
+
+int page_pool_list(struct page_pool *pool);
+void page_pool_detached(struct page_pool *pool);
+void page_pool_unlist(struct page_pool *pool);
+
+#endif

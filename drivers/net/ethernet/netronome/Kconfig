@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# Netronome device configuration
+#
+
+config NET_VENDOR_NETRONOME
+	bool "Netronome(R) devices"
+	default y
+	help
+	  If you have a Netronome(R) network (Ethernet) card or device, say Y.
+
+	  Note that the answer to this question doesn't directly affect the
+	  kernel: saying N will just cause the configurator to skip all
+	  the questions about Netronome(R) cards. If you say Y, you will be
+	  asked for your specific card in the following questions.
+
+if NET_VENDOR_NETRONOME
+
+# removed config NFP
+# removed config NFP_APP_FLOWER
+# removed config NFP_APP_ABM_NIC
+# removed config NFP_NET_IPSEC
+# removed config NFP_DEBUG
+endif

@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Used by common drivers, when they need to ask questions
+config MEDIA_COMMON_OPTIONS
+	bool
+
+comment "common driver options"
+	depends on MEDIA_COMMON_OPTIONS
+
+config CYPRESS_FIRMWARE
+	tristate
+	depends on USB
+
+# removed config TTPCI_EEPROM
+config UVC_COMMON
+	tristate
+
+config VIDEO_CX2341X
+	tristate
+
+# removed config VIDEO_TVEEPROM
+# removed source "drivers/media/common/b2c2/Kconfig"
+source "drivers/media/common/saa7146/Kconfig"
+# removed source "drivers/media/common/siano/Kconfig"
+source "drivers/media/common/v4l2-tpg/Kconfig"
+source "drivers/media/common/videobuf2/Kconfig"

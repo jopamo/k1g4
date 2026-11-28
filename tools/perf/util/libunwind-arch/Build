@@ -1,0 +1,18 @@
+perf-util-$(CONFIG_LIBUNWIND) += libunwind-arch.o
+
+define libunwind_arch
+ifneq ($(wildcard $(srctree)/arch/$(1)/include/uapi/asm/perf_regs.h),)
+perf-util-$(CONFIG_LIBUNWIND) += $(2).o
+endif
+endef
+
+$(eval $(call libunwind_arch,arm64,libunwind-arm64))
+$(eval $(call libunwind_arch,arm,libunwind-arm))
+$(eval $(call libunwind_arch,loongarch,libunwind-loongarch))
+$(eval $(call libunwind_arch,mips,libunwind-mips))
+$(eval $(call libunwind_arch,powerpc,libunwind-ppc32))
+$(eval $(call libunwind_arch,powerpc,libunwind-ppc64))
+$(eval $(call libunwind_arch,riscv,libunwind-riscv))
+$(eval $(call libunwind_arch,s390,libunwind-s390))
+$(eval $(call libunwind_arch,x86,libunwind-i386))
+$(eval $(call libunwind_arch,x86,libunwind-x86_64))

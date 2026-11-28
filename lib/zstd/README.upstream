@@ -1,0 +1,6 @@
+SPDX-License-Identifier: GPL-2.0
+
+The imported include/linux/zstd*.h and lib/zstd sources are from:
+
+Repository: https://github.com/facebook/zstd
+Commit: 82d322c4973d9e2968d94047a40892bc6d9a9bdf

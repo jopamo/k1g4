@@ -1,0 +1,15 @@
+define perf_reg_arch
+ifneq ($(wildcard $(srctree)/tools/perf/arch/$(1)/include/perf_regs.h),)
+perf-util-y += $(2).o
+endif
+endef
+
+$(eval $(call perf_reg_arch,arm64,perf_regs_aarch64))
+$(eval $(call perf_reg_arch,arm,perf_regs_arm))
+$(eval $(call perf_reg_arch,csky,perf_regs_csky))
+$(eval $(call perf_reg_arch,loongarch,perf_regs_loongarch))
+$(eval $(call perf_reg_arch,mips,perf_regs_mips))
+$(eval $(call perf_reg_arch,powerpc,perf_regs_powerpc))
+$(eval $(call perf_reg_arch,riscv,perf_regs_riscv))
+$(eval $(call perf_reg_arch,s390,perf_regs_s390))
+$(eval $(call perf_reg_arch,x86,perf_regs_x86))
